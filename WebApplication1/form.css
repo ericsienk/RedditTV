@@ -1,0 +1,108 @@
+﻿html, body {
+    font-family: Helvetica,Arial,"Lucida Grande",sans-serif;
+    margin: 0;
+    height: 100%;
+    background: rgb(102,102,102);
+}
+
+h1 {
+    color: #96151D;
+}
+
+.form-body {
+    height: 100%;
+    max-height: 80%;
+    background: #d0cec0;
+}
+
+.card {
+    margin: 5px;
+    padding: 10px;
+    box-shadow: 0px 2px 4px 0px #aaa;
+    border-radius: 1px;
+    background: white;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header {
+    background: #96151D;
+    color: white;
+    box-shadow: 0px 2px 4px 0px #aaa;
+    margin-top: 0;
+    padding: 15px;
+}
+
+.center {
+    max-width: 960px;
+    margin: 0 auto 0 auto;
+}
+
+.center-wrapper {
+    max-width: 1100px;
+    margin: 0 auto 0 auto;
+    background: #E8E5D6;
+    height: 100%;
+    padding: 10px;
+    box-shadow: inset 0px 0px 9px 1px #999;
+}
+
+.footer {
+    height: 100px;
+    bottom: -100px;
+    background: rgb(102,102,102);
+    color: white;
+    padding: 10px;
+}
+
+    .footer a {
+        color: white;
+    }
+
+.v-button {
+    width: 100%;
+    margin-top: 3px;
+}
+
+a {
+    color: #666;
+}
+
+.carousel-control {
+    width: 180px;
+}
+
+@media (max-width: 1100px) {
+    .carousel-control, .carousel-control.right, .carousel-control.left {
+        opacity: .3;
+        background-image: none;
+    }
+}
+
+body {
+    background: #f1f1f1;
+}
+
+.comment {
+}
+
+.comment-holder {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 0px 12px 0px #aaa;
+    padding: 10px;
+    background: white;
+    word-wrap: break-word;
+}
+
+.title {
+    font-size: 30px;
+    background: white;
+    margin: 0;
+    padding: 10px;
+}
+
+.carousel {
+    background: #ccc;
+}
