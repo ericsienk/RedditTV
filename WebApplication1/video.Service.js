@@ -31,7 +31,8 @@
                                 type = jsonObj.data.data.children[i].data.domain;
                                 videos.push({
                                     ID: jsonObj.data.data.children[i].data.id,
-                                    URL: makeURL(jsonObj.data.data.children[i].data.url, type),
+                                    IFRAME: makeURL(jsonObj.data.data.children[i].data.url, type),
+                                    URL: jsonObj.data.data.children[i].data.url,
                                     TITLE: jsonObj.data.data.children[i].data.title,
                                     TYPE: type,
                                 });
@@ -43,11 +44,11 @@
 
             function makeURL(id, type) {
                 var match, url =''
-                if (type == 'youtube.com') {
+                if (type == 'youtube.com' || type == 'youtu.be') {
                     match = id.match(/^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/);
                     if (match && match[2].length == 11)
                         url = match[2];
-                    return "<iframe style='margin-left:auto; margin-right:auto; display:block;' src'//www.youtube.com/embed/" + url + "' width='960' height='500px' frameborder='0' allowfullscreen></iframe>";
+                    return "<iframe style='margin-left:auto; margin-right:auto; display:block;' src='//www.youtube.com/embed/" + url + "' width='960' height='500px' frameborder='0' allowfullscreen></iframe>";
                 }
                 else if (type == 'vimeo.com') {
                     match = id.match(/(videos|video|channels|\.com)\/([\d]+)/);
@@ -55,8 +56,14 @@
                         url = match[2];
                     return "<iframe style='margin-left:auto; margin-right:auto; display:block;' src='//player.vimeo.com/video/" + url + "' width='960' height='500px' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>";
                 }
+                else if (type == 'vid.me') {
+                    match = id.match(/^.*(vid.me\/|v|u|\|&)([^#\&\?]*).*/);
+                    if (match)
+                        url = match[2];
+                    return "<iframe style='margin-left:auto; margin-right:auto; display:block;' src='//vid.me/e/" + url + "' width='960' height='500px' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>";
+                }
                 else {
-                    return id;
+                    return "<iframe style='margin-left:auto; margin-right:auto; display:block;' src='" + id + "' width='960' height='500px' frameborder='0' allowfullscreen></iframe>";
                 }
             }
         })

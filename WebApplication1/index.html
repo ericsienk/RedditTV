@@ -2,24 +2,32 @@
 <html lang="en" ng-app="redditTV" ng-controller="redditTVCtrl">
 <head>
     <title>RedditTV</title>
+    <meta name="theme-color" content="#F54B00" />
+    <link rel="icon" href="favicon-16x16.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="bootstrap.css" rel="stylesheet" />
     <link href="form.css" rel="stylesheet" />
 </head>
-<body ng-clock="">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner" role="listbox">
-            <div id="Video" class="item active" ng-bind-html="current.URL | sanitize">
+<body ng-cloak="">
+    <div class="header">
+        <img class="tv-ico" src="tv-ico.png" />&nbsp;&nbsp;Reddit<b>TV</b>
+        <div class="pull-right">
+            <b>SHARE</b>&nbsp;<input style="display: inline; width: 100px;" onfocus="this.select()" type="text" ng-model="current.URL" />
+        </div>
+    </div>
+    <div class="carousel">
+        <div class="carousel-inner">
+            <div id="Video" class="item active" ng-bind-html="current.IFRAME | sanitize">
             </div>
             <div style="max-width: 960px; margin-left: auto; margin-right: auto">
                 <h2 id="Title" class="title">{{current.TITLE}}</h2>
             </div>
         </div>
-        <a id="prev" class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <a class="left carousel-control" ng-click="prevVideo()">
             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
         </a>
-        <a id="next" class="right carousel-control" href="#myCarousel" role="button" data-slide="next" ng-click="nextVideo()">
+        <a class="right carousel-control" ng-click="nextVideo()">
             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
@@ -27,7 +35,7 @@
     <div class="comment-holder">
         <div ng-repeat="comment in comments">
             <div class="comment">
-              {{comment}}                  
+                {{comment}}                  
             </div>
             <br>
             <br>
@@ -41,6 +49,6 @@
     <script src="js/angular-resources.min.js"></script>
     <script src="js/angular-sanitize.min.js"></script>
     <script src="video.controller.js"></script>
-    <script src="video.Service.js"></script>
+    <script src="video.service.js"></script>
 </body>
 </html>

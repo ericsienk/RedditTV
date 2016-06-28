@@ -3,3 +3,8 @@ W:\CIS4396-S03\tue56676\tv\WebApplication1\bin\WebApplication1.pdb
 W:\CIS4396-S03\tue56676\tv\WebApplication1\obj\Debug\RedditTV.csprojResolveAssemblyReference.cache
 W:\CIS4396-S03\tue56676\tv\WebApplication1\obj\Debug\WebApplication1.dll
 W:\CIS4396-S03\tue56676\tv\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\Eric\Documents\Git\RedditTv\WebApplication1\bin\WebApplication1.dll
+C:\Users\Eric\Documents\Git\RedditTv\WebApplication1\bin\WebApplication1.pdb
+C:\Users\Eric\Documents\Git\RedditTv\WebApplication1\obj\Debug\RedditTV.csprojResolveAssemblyReference.cache
+C:\Users\Eric\Documents\Git\RedditTv\WebApplication1\obj\Debug\WebApplication1.dll
+C:\Users\Eric\Documents\Git\RedditTv\WebApplication1\obj\Debug\WebApplication1.pdb

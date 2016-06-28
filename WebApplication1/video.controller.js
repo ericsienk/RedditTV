@@ -35,6 +35,15 @@ mainApp.controller('redditTVCtrl', function ($scope, videoService, $http) {
 
     }
 
+    $scope.prevVideo = function () {
+        if ($scope.index > 0) {
+            $scope.index--;
+            $scope.current = $scope.videos[$scope.index];
+            getComments($scope.current.ID);
+        }
+
+    }
+
     getVideos('');
 });
 
