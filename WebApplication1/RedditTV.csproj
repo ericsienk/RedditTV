@@ -70,6 +70,8 @@
     <Content Include="obj\Debug\RedditTV.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\WebApplication1.dll" />
     <Content Include="obj\Debug\WebApplication1.pdb" />
+    <Content Include="tv-ico.png" />
+    <Content Include="tv.png" />
     <Content Include="video.controller.js" />
     <Content Include="video.Service.js" />
     <Content Include="Web.config" />

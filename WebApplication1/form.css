@@ -89,7 +89,7 @@
     position:absolute;
     z-index: 9998;
     animation: fly-in .35s ease both;
-    animation: pulse .35s ease infinite;
+    animation: pulse .5s ease infinite;
     animation-delay:.35s;
 }
 
