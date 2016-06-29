@@ -2,15 +2,18 @@
 
 var mainApp = angular.module("redditTV", []);
 mainApp.controller('redditTVCtrl', function ($scope, videoService, $http) {
+    $scope.loading = true;
 
     var getVideos = function () {
         videoService.getVideos().then(function (data) {
             $scope.$evalAsync(function () {
                 $scope.videos = data;
                 if ($scope.videos.length > 0) {
+                    $scope.loading = false;
                     $scope.current = data[0];
                     getComments($scope.current.ID);
                     $scope.index = 0;
+
                 }
             })
         })

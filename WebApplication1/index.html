@@ -8,7 +8,7 @@
     <link href="bootstrap.css" rel="stylesheet" />
     <link href="form.css" rel="stylesheet" />
 </head>
-<body ng-cloak="">
+<body ng-cloak="" class="ng-cloak">
     <div class="header">
         <img class="tv-ico" src="tv-ico.png" />&nbsp;&nbsp;Reddit<b>TV</b>
         <div class="pull-right">
@@ -17,6 +17,9 @@
     </div>
     <div class="carousel">
         <div class="carousel-inner">
+            <div class="spinner" ng-show="loading">
+                <img class="spinner-img" src="tv.png" />
+            </div>
             <div id="Video" class="item active" ng-bind-html="current.IFRAME | sanitize">
             </div>
             <div style="max-width: 960px; margin-left: auto; margin-right: auto">

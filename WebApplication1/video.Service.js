@@ -5,7 +5,6 @@
 
     angular.module("redditTV").factory('videoService', ['$http', function ($http) {
         var factory = {};
-
         factory.getComments = (function (id) {
             return $http.get( "https://www.reddit.com/r/videos/comments/" + id + ".json")
                 .then(function (jsonObj) {
