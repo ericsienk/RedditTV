@@ -1,0 +1,105 @@
+.carousel-control {
+    width: 180px;
+    height: 70%;
+}
+
+.marginRight20px {
+    margin-right: 20px;
+}
+
+@media (max-width: 1100px) {
+    .carousel-control, .carousel-control.right, .carousel-control.left {
+        opacity: .3;
+        background-image: none;
+    }
+}
+a {
+    color: #FF4500;
+}
+
+a:hover {
+    color:#b34700;
+}
+
+.btn-primary {
+    background-color: #FF4500;
+    color: #fff;
+}
+
+.btn-primary:hover{
+    background-color: #b34700;
+}
+
+.comment-holder {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 0px 12px 0px #aaa;
+    padding: 10px;
+    background: white;
+    word-wrap: break-word;
+}
+
+.title {
+    font-size: 30px;
+    background: white;
+    margin: 0;
+    padding: 10px;
+    min-height: 86px;
+}
+
+.carousel {
+    background: black;
+}
+
+.header {
+    height: 50px;
+    width: 100%;
+    background: white;
+    box-shadow: inset 0px -4px 10px -4px #aaa;
+    padding: 10px 15px 10px 15px;
+}
+
+.tv-ico {
+    height: 100%;
+    border-radius:50%;
+}
+
+.comment-holder, #Video {
+    min-height: 500px;
+}
+
+.title-wrapper {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none !important;
+}
+
+.spinner {
+    margin-top: 15%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 9998;
+    animation: fly-in .35s ease both;
+    animation: pulse .5s ease infinite;
+    animation-delay: .35s;
+}
+
+.spinner-img {
+    left: 50%;
+    width: 100px;
+    margin-left: -50px;
+    position: relative;
+    border-radius: 50%;
+}
+
+@keyframes pulse {
+    50% {
+        opacity: .5;
+    }
+}

@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="redditTV" ng-controller="redditTVCtrl">
+<head>
+    <title>RedditTV</title>
+    <meta name="theme-color" content="#F54B00" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet"/>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="form.css" rel="stylesheet" />
+</head>
+<body ng-cloak="" class="ng-cloak" ng-keydown="key($event)">
+<div class="header">
+    <img class="tv-ico" src="tv.png" />&nbsp;&nbsp;Reddit<b>TV</b>
+    <div class="pull-right">
+        <input id="toggle-mic" type="checkbox" checked data-toggle="toggle" data-size="small"
+               data-on="<i class='fa fa-microphone' aria-hidden='true'></i>"
+               data-off="<i class='fa fa-microphone-slash' aria-hidden='true'></i>"/>
+        <span class="marginRight20px"></span>
+        <a href="#" target="_blank" ng-href="{{current.URL}}"><b>SHARE</b></a>&nbsp;&nbsp;<input style="display: inline; width: 100px;" onfocus="this.select()" type="text" ng-model="current.URL" />
+    </div>
+</div>
+<div class="carousel">
+    <div class="carousel-inner">
+        <div class="spinner" ng-show="loading"><img class="spinner-img" src="tv.png" /></div>
+        <div id="Video" class="item active" ng-bind-html="current.IFRAME | sanitize"></div>
+        <div class="title-wrapper"><h2 id="Title" class="title">{{current.TITLE}}</h2></div>
+    </div>
+    <a class="left carousel-control" ng-click="prevVideo()"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a>
+    <a class="right carousel-control" ng-click="nextVideo()"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+</div>
+<div class="comment-holder"><div class="comment" ng-repeat="comment in comments track by $index">{{comment}}<br><br></div></div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<script src="video.controller.js"></script>
+<script src="video.service.js"></script>
+</body>
+</html>
