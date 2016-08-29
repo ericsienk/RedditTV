@@ -66,14 +66,11 @@ mainApp.controller('redditTVCtrl', function ($scope, videoService, $http) {
         recognition.onresult = function (event) {
             if (event !== undefined) {
                 for (var i = event.resultIndex; i < event.results.length; ++i) {
-                    if (event.results[i].isFinal){
-                        console.log(event.results[i][0].transcript);
-                        if(event.results[i][0].transcript.trim().toUpperCase() === "I'M GOOD" ||
-                           event.results[i][0].transcript.trim().toUpperCase() === "NEXT VIDEO") {
-                            $scope.nextVideo();
-                            recognition.stop();
-                            break;
-                        }
+                    console.log(event.results[i][0].transcript);
+                    if(event.results[i][0].transcript.trim().toUpperCase() === "NEXT") {
+                        $scope.nextVideo();
+                        recognition.stop();
+                        break;
                     }
                 }
             }
