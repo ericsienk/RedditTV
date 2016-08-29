@@ -2,8 +2,8 @@
 var mainApp = angular.module("redditTV", []);
 mainApp.controller('redditTVCtrl', function ($scope, videoService, $http) {
     $scope.loading = true;
-    $scope.talker = '';
     $scope.speechOn = true;
+    $scope.next = true;
     var recognition;
 
     var getVideos = function () {
@@ -48,6 +48,9 @@ mainApp.controller('redditTVCtrl', function ($scope, videoService, $http) {
         else if ($event.keyCode == 37)
             $scope.prevVideo();
     };
+    var limitNext = function(){
+        $scope.next = true;
+    }
     var startSpeechListening = function()
     {
         function setupSpeech(){
@@ -64,13 +67,15 @@ mainApp.controller('redditTVCtrl', function ($scope, videoService, $http) {
         }
         setupSpeech();
         recognition.onresult = function (event) {
-            if (event !== undefined) {
+            if (event !== undefined && $scope.next) {
                 for (var i = event.resultIndex; i < event.results.length; ++i) {
                     console.log(event.results[i][0].transcript);
                     if(event.results[i][0].transcript.trim().toUpperCase() === "NEXT") {
                         $scope.nextVideo();
                         recognition.stop();
                         event.results = undefined;
+                        $scope.next = false;
+                        setTimeout(limitNext, 2000);
                         break;
                     }
                 }
