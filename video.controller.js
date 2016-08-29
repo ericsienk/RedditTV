@@ -50,6 +50,7 @@ mainApp.controller('redditTVCtrl', function ($scope, videoService, $http) {
     };
     var limitNext = function(){
         $scope.next = true;
+        console.log("You can now skip a video");
     }
     var startSpeechListening = function()
     {
@@ -73,7 +74,6 @@ mainApp.controller('redditTVCtrl', function ($scope, videoService, $http) {
                     if(event.results[i][0].transcript.trim().toUpperCase() === "NEXT") {
                         $scope.nextVideo();
                         recognition.stop();
-                        event.results = undefined;
                         $scope.next = false;
                         setTimeout(limitNext, 2000);
                         break;
