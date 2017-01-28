@@ -7,7 +7,7 @@ mainApp.controller('redditTVCtrl', function ($scope, videoService, $http) {
     var recognition;
 
     $scope.toggleScroll = function () {
-        $('html, body').animate({scrollTop:$('#carousel').position().top}, 'slow');
+        $('html, body').animate({scrollTop:$('#carousel').position().top + 1}, 'slow');
     };
 
     var getVideos = function () {
