@@ -6,6 +6,10 @@ mainApp.controller('redditTVCtrl', function ($scope, videoService, $http) {
     $scope.next = true;
     var recognition;
 
+    $scope.toggleScroll = function () {
+        $('html, body').animate({scrollTop:$('#carousel').position().top}, 'slow');
+    };
+
     var getVideos = function () {
         videoService.getVideos().then(function (data) {
             $scope.$evalAsync(function () {
@@ -51,7 +55,7 @@ mainApp.controller('redditTVCtrl', function ($scope, videoService, $http) {
     var limitNext = function(){
         $scope.next = true;
         console.log("You can now skip a video");
-    }
+    };
     var startSpeechListening = function()
     {
         function setupSpeech(){

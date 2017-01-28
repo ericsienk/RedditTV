@@ -103,3 +103,13 @@ a:hover {
         opacity: .5;
     }
 }
+
+
+.toggle {
+    cursor: pointer;
+    padding-right: 9px;
+}
+
+.carousel-control:hover {
+    cursor: pointer;
+}

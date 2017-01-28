@@ -15,7 +15,7 @@
                     }
                     return response;
                 })
-        })
+        });
         factory.getVideos = (function (afterID) {
             return $http.get(afterID != null ? "https://www.reddit.com/r/videos/.json?limit=100&after=t3_" + afterID : "https://www.reddit.com/r/videos/.json?limit=100")
                 .then(function (jsonObj) {
@@ -29,7 +29,7 @@
                                     IFRAME: makeURL(jsonObj.data.data.children[i].data.url, type),
                                     URL: jsonObj.data.data.children[i].data.url,
                                     TITLE: jsonObj.data.data.children[i].data.title,
-                                    TYPE: type,
+                                    TYPE: type
                                 });
                             }
                         }
@@ -37,7 +37,7 @@
                     return videos;
                 });
             function makeURL(id, type) {
-                var match, url = ''
+                var match, url = '';
                 if (type == 'youtube.com' || type == 'youtu.be') {
                     match = id.match(/^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/);
                     if (match && match[2].length == 11)
@@ -60,7 +60,7 @@
                     return "<iframe style='margin-left:auto; margin-right:auto; display:block;' src='" + id + "' width='960' height='500px' frameborder='0' allowfullscreen></iframe>";
                 }
             }
-        })
+        });
         return factory;
     }]);
 }(angular));

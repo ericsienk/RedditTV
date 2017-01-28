@@ -11,17 +11,15 @@
     <link href="form.css" rel="stylesheet" />
 </head>
 <body ng-cloak="" class="ng-cloak" ng-keydown="key($event)">
-<div class="header">
+<div id="header" class="header">
+    <span class="glyphicon glyphicon-menu-up toggle" ng-click="toggleScroll()"></span>
     <img class="tv-ico" src="tv.png" />&nbsp;&nbsp;Reddit<b>TV</b>
-    <div class="pull-right">
-        <input id="toggle-mic" type="checkbox" checked data-toggle="toggle" data-size="small"
-               data-on="<i class='fa fa-microphone' aria-hidden='true'></i>"
-               data-off="<i class='fa fa-microphone-slash' aria-hidden='true'></i>"/>
-        <span class="marginRight20px"></span>
-        <a href="#" target="_blank" ng-href="{{current.URL}}"><b>SHARE</b></a>&nbsp;&nbsp;<input style="display: inline; width: 100px;" onfocus="this.select()" type="text" ng-model="current.URL" />
+    <div class="pull-right" style="margin-top:5px">
+        <a href="#" target="_blank" ng-href="{{current.URL}}"><b>OPEN VIDEO</b></a>
+        <span class="glyphicon glyphicon-share-alt"></span>
     </div>
 </div>
-<div class="carousel">
+<div id="carousel" class="carousel">
     <div class="carousel-inner">
         <div class="spinner" ng-show="loading"><img class="spinner-img" src="tv.png" /></div>
         <div id="Video" class="item active" ng-bind-html="current.IFRAME | sanitize"></div>
